@@ -1,4 +1,4 @@
-Comparing the SVM and RVM 
+## Comparing the SVM and RVM 
 
 This contains the fully-reproducible work to provide a simple comparison of the Support Vector Machine (SVM) and Relevance Vector Machine (RVM) on a simple dataset – the Wisconsin Breast Cancer Diagnosis dataset. 
 
