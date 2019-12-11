@@ -1,0 +1,171 @@
+fitting simple SVM:
+seconds to fit simple SVM:  0.00513005256652832
+[[39  2]
+ [ 0 73]]
+              precision    recall  f1-score   support
+
+         0.0       1.00      0.95      0.97        41
+         1.0       0.97      1.00      0.99        73
+
+   micro avg       0.98      0.98      0.98       114
+   macro avg       0.99      0.98      0.98       114
+weighted avg       0.98      0.98      0.98       114
+
+fitting SVM grid:
+seconds to fit SVM grid:  4.409198999404907
+SVM best params:
+{'C': 10, 'gamma': 0.1, 'kernel': 'rbf'}
+SVC(C=10, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=0.1, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+
+
+seconds to predict with optimized SVM:  0.0009667873382568359
+[[40  1]
+ [ 2 71]]
+              precision    recall  f1-score   support
+
+         0.0       0.95      0.98      0.96        41
+         1.0       0.99      0.97      0.98        73
+
+   micro avg       0.97      0.97      0.97       114
+   macro avg       0.97      0.97      0.97       114
+weighted avg       0.97      0.97      0.97       114
+
+fitting RVM:
+time to fit RVM:  14.376911163330078
+time to predict with RVM:  0.00034308433532714844
+RVM hyperparameters:
+{'kernel': 'rbf', 'degree': 3, 'coef1': None, 'coef0': 0.0, 'n_iter': 3000, 'tol': 0.001, 'alpha': 1e-06, 'threshold_alpha': 1000000000.0, 'beta': 1e-06, 'beta_fixed': False, 'bias_used': True, 'verbose': False, 'n_iter_posterior': 50}
+[[40  1]
+ [ 2 71]]
+              precision    recall  f1-score   support
+
+         0.0       0.95      0.98      0.96        41
+         1.0       0.99      0.97      0.98        73
+
+   micro avg       0.97      0.97      0.97       114
+   macro avg       0.97      0.97      0.97       114
+weighted avg       0.97      0.97      0.97       114
+
+
+
+BEGIN RUN WITH BOOTSTRAP MULTIPLE  1
+
+
+(569, 31)
+fitting simple SVM:
+seconds to fit simple SVM:  0.0059621334075927734
+[[31 19]
+ [ 0 64]]
+              precision    recall  f1-score   support
+
+         0.0       1.00      0.62      0.77        50
+         1.0       0.77      1.00      0.87        64
+
+   micro avg       0.83      0.83      0.83       114
+   macro avg       0.89      0.81      0.82       114
+weighted avg       0.87      0.83      0.82       114
+
+fitting SVM grid:
+seconds to fit SVM grid:  3.8304550647735596
+SVM best params:
+{'C': 10000, 'gamma': 0.001, 'kernel': 'rbf'}
+SVC(C=10000, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=0.001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+
+
+seconds to predict with optimized SVM:  0.0009291172027587891
+[[43  7]
+ [ 2 62]]
+              precision    recall  f1-score   support
+
+         0.0       0.96      0.86      0.91        50
+         1.0       0.90      0.97      0.93        64
+
+   micro avg       0.92      0.92      0.92       114
+   macro avg       0.93      0.91      0.92       114
+weighted avg       0.92      0.92      0.92       114
+
+fitting RVM:
+time to fit RVM:  10.976945877075195
+time to predict with RVM:  0.00032782554626464844
+RVM hyperparameters:
+{'kernel': 'rbf', 'degree': 3, 'coef1': None, 'coef0': 0.0, 'n_iter': 3000, 'tol': 0.001, 'alpha': 1e-06, 'threshold_alpha': 1000000000.0, 'beta': 1e-06, 'beta_fixed': False, 'bias_used': False, 'verbose': False, 'n_iter_posterior': 50}
+[[40 10]
+ [ 0 64]]
+              precision    recall  f1-score   support
+
+         0.0       1.00      0.80      0.89        50
+         1.0       0.86      1.00      0.93        64
+
+   micro avg       0.91      0.91      0.91       114
+   macro avg       0.93      0.90      0.91       114
+weighted avg       0.92      0.91      0.91       114
+
+
+
+#======================================#
+
+
+BEGIN RUN WITH BOOTSTRAP MULTIPLE  2
+
+
+(1138, 31)
+fitting simple SVM:
+seconds to fit simple SVM:  0.019149065017700195
+[[ 62  21]
+ [  1 144]]
+              precision    recall  f1-score   support
+
+         0.0       0.98      0.75      0.85        83
+         1.0       0.87      0.99      0.93       145
+
+   micro avg       0.90      0.90      0.90       228
+   macro avg       0.93      0.87      0.89       228
+weighted avg       0.91      0.90      0.90       228
+
+fitting SVM grid:
+seconds to fit SVM grid:  12.401456117630005
+SVM best params:
+{'C': 10, 'gamma': 0.1, 'kernel': 'rbf'}
+SVC(C=10, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=0.1, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+
+
+seconds to predict with optimized SVM:  0.0025148391723632812
+[[ 75   8]
+ [  4 141]]
+              precision    recall  f1-score   support
+
+         0.0       0.95      0.90      0.93        83
+         1.0       0.95      0.97      0.96       145
+
+   micro avg       0.95      0.95      0.95       228
+   macro avg       0.95      0.94      0.94       228
+weighted avg       0.95      0.95      0.95       228
+
+fitting RVM:
+time to fit RVM:  120.78921294212341
+time to predict with RVM:  0.000453948974609375
+RVM hyperparameters:
+{'kernel': 'rbf', 'degree': 3, 'coef1': None, 'coef0': 0.0, 'n_iter': 3000, 'tol': 0.001, 'alpha': 1e-06, 'threshold_alpha': 1000000000.0, 'beta': 1e-06, 'beta_fixed': False, 'bias_used': True, 'verbose': False, 'n_iter_posterior': 50}
+[[ 72  11]
+ [  5 140]]
+              precision    recall  f1-score   support
+
+         0.0       0.94      0.87      0.90        83
+         1.0       0.93      0.97      0.95       145
+
+   micro avg       0.93      0.93      0.93       228
+   macro avg       0.93      0.92      0.92       228
+weighted avg       0.93      0.93      0.93       228
+
+
+
+#======================================#

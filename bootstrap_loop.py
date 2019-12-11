@@ -12,8 +12,8 @@ from skrvm import RVC
 import svm_rvm_helpers as helpers
 
 # SVM hyperparametes 
-PARAM_GRID = {'C': [0.1, 1, 10, 100], 
-              'gamma': [1, 0.1, 0.01, 0.001], 
+PARAM_GRID = {'C': [0.0001, 0.001, 0.1, 1, 10, 100, 1000, 10000], 
+              'gamma': [0.0000001, 0.000001, 0.00001, 0.0001, 0.001, 0.1, 1, 10], 
               'kernel': ['rbf']}
 
 
@@ -42,6 +42,7 @@ def build_simple_SVM(X_train_scaled, y_train, X_test_scaled, y_test):
     Returns: time to train
     '''
     svc_model = SVC(gamma = 'auto')
+    print("fitting simple SVM:")
     start = time.time()
     svc_model.fit(X_train_scaled, y_train)
     delta = time.time() - start
@@ -98,10 +99,10 @@ def build_and_run_rvc(X_train_scaled, y_train, X_test_scaled, y_test):
     Takes: training and testing data
     Returns: time to fit, time to predict, plus it prints
     '''
-    
-    
+        
     # build RVC 
     rvc_model = RVC()
+    print("fitting RVM:")
     start = time.time()
     rvc_model.fit(X_train_scaled, y_train)
     delta0 = time.time()-start
@@ -130,7 +131,7 @@ def summarize_runtime(info, delta_list):
     '''
 
     df = pd.DataFrame([delta_list])
-    df.columns = ['svm_strain', 'svm_grid', 'svm_predict', 'rvm_train', 'rvm_predict']
+    df.columns = ['svm_simple_train', 'svm_grid_train', 'svm_predict', 'rvm_train', 'rvm_predict']
     df['run_info'] = info
     cols = ['run_info'] + list(df.columns[:-1])
 
@@ -170,7 +171,7 @@ if __name__ == "__main__":
     results_df = simple_run(cancer_df, t + ": No bootstrap, no noise")
 
     # explore what happens if we introduce random noise
-    for i in [1, 2, 5]:
+    for i in [1, 2]:
         
         print("\n")
         print("BEGIN RUN WITH BOOTSTRAP MULTIPLE ", i)
@@ -182,9 +183,12 @@ if __name__ == "__main__":
 
         t = str(round(time.time(), 0))
         out = simple_run(noisy_cancer_df, t + " Bootstrap x " + str(i) + " with Gaussian noise")
-        results_df.append(out)
+        results_df = results_df.append(out)
         
         print("\n")
         print("#======================================#")
     
-    results_df.to_csv("results_svm-vs-rvm.csv", append=True)
+    results_df.to_csv("results_svm-vs-rvm.csv")
+
+
+
